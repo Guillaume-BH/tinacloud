@@ -21,16 +21,16 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         width="medium"
       >
         <TinaMarkdown content={data.body} />
-        {data.image && (
+        {data.imageContent && (
               <div
-                data-tina-field={tinaField(data.image, "src")}
+                data-tina-field={tinaField(data.imageContent, "imageContentSrc")}
                 className="relative flex-shrink-0 md:w-2/5 flex justify-center"
               >
                 <Image
                   className="w-full h-auto max-w-full rounded-lg"
                   style={{ objectFit: "cover" }}
-                  alt={data.image.alt}
-                  src={data.image.src}
+                  alt={data.imageContent.imageContentAlt}
+                  src={data.imageContent.imageContentSrc}
                   width={500}
                   height={500}
                 />
