@@ -1,6 +1,5 @@
 import type { Collection } from "tinacms";
 import { ColorPickerInput } from "../fields/color";
-import { iconSchema } from "../fields/icon";
 
 const Global: Collection = {
   label: "Global",
@@ -16,24 +15,26 @@ const Global: Collection = {
       label: "Header",
       name: "header",
       fields: [
-        iconSchema as any,
         {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-        {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
+          type: "object",
+          label: "Image",
+          name: "imageHeaderObject",
+          fields: [
+            {
+              name: "imageHeaderObjectSrc",
+              label: "Source de l'image",
+              type: "image",
+            },
+            {
+              name: "imageHeaderObjecttAlt",
+              label: "Texte alternatif (description de l'image)",
+              type: "string",
+            },
           ],
         },
         {
           type: "object",
-          label: "Nav Links",
+          label: "Liens de navigation",
           name: "nav",
           list: true,
           ui: {
@@ -42,13 +43,13 @@ const Global: Collection = {
             },
             defaultItem: {
               href: "home",
-              label: "Home",
+              label: "Accueil",
             },
           },
           fields: [
             {
               type: "string",
-              label: "Link",
+              label: "Lien",
               name: "href",
             },
             {
@@ -81,23 +82,18 @@ const Global: Collection = {
           fields: [
             {
               type: "string",
-              label: "Facebook",
-              name: "facebook",
-            },
-            {
-              type: "string",
               label: "Twitter",
               name: "twitter",
             },
             {
               type: "string",
-              label: "Instagram",
-              name: "instagram",
+              label: "Youtube",
+              name: "youtube",
             },
             {
               type: "string",
-              label: "Github",
-              name: "github",
+              label: "Fiverr",
+              name: "fiverr",
             },
           ],
         },

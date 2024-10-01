@@ -1,15 +1,12 @@
 {
   "header": {
-    "icon": {
-      "name": "Tina",
-      "color": "orange",
-      "style": "float"
+    "imageHeaderObject": {
+      "imageHeaderObjectSrc": "/uploads/sitorex_logo.png",
+      "imageHeaderObjecttAlt": "Logo de Sitorex"
     },
-    "name": "Tina Starter",
-    "color": "default",
     "nav": [
       {
-        "href": "",
+        "href": "home",
         "label": "Home"
       },
       {
@@ -25,9 +22,7 @@
   "footer": {
     "color": "default",
     "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "twitter": "/"
     }
   },
   "theme": {

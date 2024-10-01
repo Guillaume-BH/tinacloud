@@ -8,6 +8,7 @@ import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../icon";
 import NavItems from "./nav-items";
 import { useLayout } from "../layout/layout-context";
+import Image from "next/image";
 
 const headerColor = {
   default:
@@ -44,15 +45,19 @@ export default function Header() {
               href="/"
               className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
             >
-              <Icon
-                tinaField={tinaField(header, "icon")}
-                parentColor={header.color}
-                data={{
-                  name: header.icon.name,
-                  color: header.icon.color,
-                  style: header.icon.style,
-                }}
-              />{" "}
+              <div
+                data-tina-field={tinaField(header.imageHeaderObject, "imageHeaderObjectSrc")}
+                className="flex justify-center items-center"
+              >
+                <Image
+                  className="rounded-full"
+                  style={{ objectFit: "cover" }}
+                  alt={header.imageHeaderObject.imageHeaderObjecttAlt}
+                  src={header.imageHeaderObject.imageHeaderObjectSrc}
+                  width={100}
+                  height={100}
+                />
+              </div>
               <span data-tina-field={tinaField(header, "name")}>
                 {header.name}
               </span>

@@ -1,44 +1,28 @@
 ---
 title: Sitorex
 blocks:
-  - headline: Welcome to the Tina Starter
+  - headline: Bienvenue sur le portfolio de Sitorex
     text: >
-      ## **Editors**
-
-
-      **Click this box to start editing it**. You will see the matching field
-      appear in the left sidebar for you to make changes. The edits will show in
-      this live preview. In that left panel, you can also navigate around the
-      page to change what you are editing (or just click a component here in the
-      preview, like you did before).
-
-
-      **Clicking 'Save' won't do anything in this demo** - but on your site it
-      will save the changes immediately or send an approval request to your team
-      for review.
-    text2: >
-      ## Developers
-
-
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      `content/pages/home.md`, components from components/blocks, and puts them
-      all together in `pages/[filename].tsx`, all based on a config
-      `tina/config.tsx`.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis molestie
+      sem. Aliquam ut mi varius, sodales leo non, laoreet nunc. Donec a tempus
+      enim. In hac habitasse platea dictumst. Aenean commodo mauris at hendrerit
+      blandit. Class aptent taciti sociosqu ad litora torquent per conubia
+      nostra, per inceptos himenaeos. Suspendisse potenti. Curabitur finibus
+      ante orci, ac ultrices erat rhoncus eleifend. Nulla dignissim neque eu
+      tellus vulputate, eu consequat dolor consectetur. Aenean et erat quis odio
+      efficitur imperdiet a et quam.
     actions:
-      - label: Get Started
+      - label: Découvrez mes créations
         type: button
         icon: true
         link: /about
-      - label: Read Blog
+      - label: Lire mes articles
         type: link
         icon: false
         link: /posts
     image:
-      src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: >-
-        Photo of palm trees at sunset by Adam Birkett -
-        unsplash.com/photos/75EFpyXu3Wg
+      src: /uploads/76d92a112454793.62ddf761882a8.png
+      alt: ''
     color: default
     _template: hero
   - items:

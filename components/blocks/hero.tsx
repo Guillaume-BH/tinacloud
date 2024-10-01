@@ -28,15 +28,6 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-start justify-center"
       >
         <div className="row-start-2 md:row-start-1 md:col-span-5 text-center md:text-left">
-          {data.tagline && (
-            <h2
-              data-tina-field={tinaField(data, "tagline")}
-              className="relative inline-block px-3 py-1 mb-8 text-md font-bold tracking-wide title-font z-20"
-            >
-              {data.tagline}
-              <span className="absolute w-full h-full left-0 top-0 rounded-full -z-1 bg-current opacity-7"></span>
-            </h2>
-          )}
           {data.headline && (
             <h3
               data-tina-field={tinaField(data, "headline")}
@@ -84,16 +75,6 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               </div>
             )}
           </div>
-          {data.text2 && (
-            <div
-              data-tina-field={tinaField(data, "text2")}
-              className={`prose prose-lg mx-auto md:mx-0 mb-10 ${
-                data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-              }`}
-            >
-              <TinaMarkdown content={data.text2} />
-            </div>
-          )}
           {data.actions && (
             <div className="mt-10">
               <Actions
@@ -123,23 +104,13 @@ export const heroBlockSchema: Template = {
   fields: [
     {
       type: "string",
-      label: "Tagline",
-      name: "tagline",
-    },
-    {
-      type: "string",
-      label: "Headline",
+      label: "Titre",
       name: "headline",
     },
     {
-      label: "Text-1",
+      label: "Contenu",
       name: "text",
       type: "rich-text",
-    },
-    {
-      type: "rich-text",
-      label: "Text-2",
-      name: "text2",
     },
     {
       label: "Actions",
@@ -148,7 +119,7 @@ export const heroBlockSchema: Template = {
       list: true,
       ui: {
         defaultItem: {
-          label: "Action Label",
+          label: "Label",
           type: "button",
           icon: true,
           link: "/",
@@ -166,17 +137,17 @@ export const heroBlockSchema: Template = {
           name: "type",
           type: "string",
           options: [
-            { label: "Button", value: "button" },
-            { label: "Link", value: "link" },
+            { label: "Bouton", value: "button" },
+            { label: "Lien", value: "link" },
           ],
         },
         {
-          label: "Icon",
+          label: "Icone",
           name: "icon",
           type: "boolean",
         },
         {
-          label: "Link",
+          label: "Lien",
           name: "link",
           type: "string",
         },
@@ -189,12 +160,12 @@ export const heroBlockSchema: Template = {
       fields: [
         {
           name: "src",
-          label: "Image Source",
+          label: "Source de l'image",
           type: "image",
         },
         {
           name: "alt",
-          label: "Alt Text",
+          label: "Texte alternatif (desciption de l'image)",
           type: "string",
         },
       ],

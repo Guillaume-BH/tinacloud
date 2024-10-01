@@ -56,14 +56,7 @@ export default function Footer() {
           >
             <Icon
               parentColor={footer.color}
-              data={{
-                name: globalSettings?.header.icon.name,
-                color:
-                  theme.color === "primary"
-                    ? "primary"
-                    : globalSettings?.header.icon.color,
-                style: globalSettings?.header.icon.style,
-              }}
+              data={{}}
               className="inline-block h-10 w-auto group-hover:text-orange-500"
             />
           </Link>
