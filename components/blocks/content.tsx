@@ -11,30 +11,28 @@ import Image from "next/image";
 
 export const Content = ({ data }: { data: PageBlocksContent }) => {
   return (
-    <Section color={data.color}>
+    <Section hasBgColor={false}>
       <Container
-        className={`prose prose-lg ${
-          data.color === "primary" ? `prose-primary` : `dark:prose-dark`
-        }`}
+        className={`prose prose-lg`}
         data-tina-field={tinaField(data, "body")}
         size="large"
         width="medium"
       >
         <TinaMarkdown content={data.body} />
-        {data.imageContent && (
-              <div
-                data-tina-field={tinaField(data.imageContent, "imageContentSrc")}
-                className="relative flex-shrink-0 md:w-2/5 flex justify-center"
+        {data.imageContent && data.imageContent.map(imageContent => 
+              {return imageContent.imageContentSrc && <div
+                data-tina-field={tinaField(imageContent, "imageContentSrc")}
+                className="flex flex-wrap gap-4"
               >
                 <Image
                   className="w-full h-auto max-w-full rounded-lg"
                   style={{ objectFit: "cover" }}
-                  alt={data.imageContent.imageContentAlt}
-                  src={data.imageContent.imageContentSrc}
+                  alt={imageContent.imageContentAlt}
+                  src={imageContent.imageContentSrc}
                   width={500}
                   height={500}
                 />
-              </div>
+              </div>}
             )}
       </Container>
     </Section>
@@ -43,7 +41,7 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
 
 export const contentBlockSchema: Template = {
   name: "content",
-  label: "Content",
+  label: "Contenu",
   ui: {
     previewSrc: "/blocks/content.png",
     defaultItem: {
@@ -53,32 +51,23 @@ export const contentBlockSchema: Template = {
   fields: [
     {
       type: "rich-text",
-      label: "Body",
+      label: "Texte",
       name: "body",
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
     },
     {
       type: "object",
       label: "Image",
+      list: true,
       name: "imageContent",
       fields: [
         {
           name: "imageContentSrc",
-          label: "Image Source",
+          label: "Source de l'image",
           type: "image",
         },
         {
           name: "imageContentAlt",
-          label: "Alt Text",
+          label: "Texte alternatif (description de l'image)",
           type: "string",
         },
       ],

@@ -90,11 +90,6 @@ const Global: Collection = {
               label: "Youtube",
               name: "youtube",
             },
-            {
-              type: "string",
-              label: "Fiverr",
-              name: "fiverr",
-            },
           ],
         },
       ],

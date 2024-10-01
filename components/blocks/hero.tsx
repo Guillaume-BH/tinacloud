@@ -22,7 +22,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
   };
 
   return (
-    <Section color={data.color}>
+    <Section hasBgColor={false}>
       <Container
         size="large"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-start justify-center"
@@ -34,11 +34,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
               className={`w-full relative mb-10 text-5xl font-extrabold tracking-normal leading-tight title-font`}
             >
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r  ${
-                  data.color === "primary"
-                    ? `from-white to-gray-100`
-                    : headlineColorClasses["blue"]
-                }`}
+                className={`bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-pink-800`}
               >
                 {data.headline}
               </span>

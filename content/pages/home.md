@@ -28,33 +28,46 @@ blocks:
   - items:
       - icon:
           name: BiCodeBlock
-          color: red
+          color: pink
           style: float
-        title: Amazing Feature
+        title: Lorem ipsum dolor sit amet.
         text: >-
-          Aliquam blandit felis rhoncus, eleifend ipsum in, condimentum nibh.
-          Praesent ac faucibus risus, eu lacinia enim.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+          condimentum eget eros ultrices luctus. Pellentesque fringilla mattis
+          mollis. In vestibulum odio ut ullamcorper ultrices. Maecenas vel
+          fringilla tortor. Ut cursus et eros eget sagittis.
       - icon:
           name: BiLike
-          color: primary
+          color: pink
           style: float
-        title: This Is a Feature
-        text: Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
+        title: Lorem ipsum dolor sit amet.
+        text: >-
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+          condimentum eget eros ultrices luctus. Pellentesque fringilla mattis
+          mollis. In vestibulum odio ut ullamcorper ultrices. Maecenas vel
+          fringilla tortor. Ut cursus et eros eget sagittis.
       - icon:
           name: BiPalette
-          color: green
+          color: pink
           style: float
-        title: Configurable Theme
+        title: Lorem ipsum dolor sit amet.
         text: >-
-          Edit global theme configuration with Tina. Change your theme's primary
-          color, font, or icon set.
-    color: tint
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+          condimentum eget eros ultrices luctus. Pellentesque fringilla mattis
+          mollis. In vestibulum odio ut ullamcorper ultrices. Maecenas vel
+          fringilla tortor. Ut cursus et eros eget sagittis.
     _template: features
+  - body: |
+      ## Mes créations
+    imageContent:
+      - imageContentSrc: /uploads/f6f147112454793.62df9937582b6.png
+      - imageContentSrc: /uploads/379e2e112454793.6360c40e9566b.png
+      - imageContentSrc: /uploads/0e8293112454793.6360c40e94a9b.png
+    _template: content
   - quote: >-
-      There are only two hard things in Computer Science: cache invalidation and
-      naming things.
-    author: Phil Karlton
-    color: primary
+      “L'art est un effort pour créer, à côté du monde réel, un monde plus
+      humain.”
+    author: André Maurois
     _template: testimonial
 ---
 

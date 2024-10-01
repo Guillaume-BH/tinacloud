@@ -10,10 +10,8 @@ import { Container } from "../layout/container";
 import { iconSchema } from "../../tina/fields/icon";
 
 export const Feature = ({
-  featuresColor,
   data,
 }: {
-  featuresColor: string;
   data: PageBlocksFeaturesItems;
 }) => {
   return (
@@ -25,7 +23,6 @@ export const Feature = ({
       {data.icon && (
         <Icon
           tinaField={tinaField(data, "icon")}
-          parentColor={featuresColor}
           data={{ size: "large", ...data.icon }}
         />
       )}
@@ -51,14 +48,14 @@ export const Feature = ({
 
 export const Features = ({ data }: { data: PageBlocksFeatures }) => {
   return (
-    <Section color={data.color}>
+    <Section>
       <Container
         className={`flex flex-wrap gap-x-10 gap-y-8 text-left`}
         size="large"
       >
         {data.items &&
           data.items.map(function (block, i) {
-            return <Feature featuresColor={data.color} key={i} data={block} />;
+            return <Feature key={i} data={block} />;
           })}
       </Container>
     </Section>
@@ -77,7 +74,7 @@ const defaultFeature = {
 
 export const featureBlockSchema = {
   name: "features",
-  label: "Features",
+  label: "Mises en avant",
   ui: {
     previewSrc: "/blocks/features.png",
     defaultItem: {
@@ -87,7 +84,7 @@ export const featureBlockSchema = {
   fields: [
     {
       type: "object",
-      label: "Feature Items",
+      label: "Element à mettre en avant",
       name: "items",
       list: true,
       ui: {
@@ -104,27 +101,17 @@ export const featureBlockSchema = {
         iconSchema,
         {
           type: "string",
-          label: "Title",
+          label: "Titre",
           name: "title",
         },
         {
           type: "string",
-          label: "Text",
+          label: "Texte",
           name: "text",
           ui: {
             component: "textarea",
           },
         },
-      ],
-    },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
       ],
     },
   ],

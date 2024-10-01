@@ -37,7 +37,7 @@ export default function NavItems({ navs }: { navs: any }) {
   const { theme } = useLayout();
   return (
     <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
-      {navs.map((item) => {
+      {navs && navs.map((item) => {
         return (
           <li
             key={item.href}

@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import { Container } from "../layout/container";
 import Link from "next/link";
 import { Icon } from "../icon";
-import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { useLayout } from "../layout/layout-context";
 import { RawRenderer } from "../raw-renderer";
@@ -47,7 +47,7 @@ export default function Footer() {
       : footerColor.default;
 
   return (
-    <footer className={cn(`bg-gradient-to-br`, footerColorCss)}>
+    <footer className={cn(`bg-gradient-to-br`, "")}>
       <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link
@@ -61,21 +61,6 @@ export default function Footer() {
             />
           </Link>
           <div className="flex gap-4">
-            {footer.social && footer.social.facebook && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={footer.social.facebook}
-                target="_blank"
-              >
-                <FaFacebookF
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      footer.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
             {footer.social && footer.social.twitter && (
               <a
                 className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
@@ -83,46 +68,22 @@ export default function Footer() {
                 target="_blank"
               >
                 <FaTwitter
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      footer.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
+                  className={`${socialIconClasses} text-pink-500 dark:text-pink-400 hover:text-pink-300`}
                 />
               </a>
             )}
-            {footer.social && footer.social.instagram && (
+            {footer.social && footer.social.youtube && (
               <a
                 className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
                 href={footer.social.instagram}
                 target="_blank"
               >
-                <AiFillInstagram
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      footer.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
-                />
-              </a>
-            )}
-            {footer.social && footer.social.github && (
-              <a
-                className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
-                href={footer.social.github}
-                target="_blank"
-              >
-                <FaGithub
-                  className={`${socialIconClasses} ${
-                    socialIconColorClasses[
-                      footer.color === "primary" ? "primary" : theme.color
-                    ]
-                  }`}
+                <FaYoutube
+                  className={`${socialIconClasses} text-pink-500 dark:text-pink-400 hover:text-pink-300`}
                 />
               </a>
             )}
           </div>
-          <RawRenderer parentColor={footer.color} rawData={pageData} />
         </div>
         <div
           className={cn(

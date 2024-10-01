@@ -3,26 +3,13 @@
     "imageHeaderObject": {
       "imageHeaderObjectSrc": "/uploads/sitorex_logo.png",
       "imageHeaderObjecttAlt": "Logo de Sitorex"
-    },
-    "nav": [
-      {
-        "href": "home",
-        "label": "Home"
-      },
-      {
-        "href": "about",
-        "label": "About"
-      },
-      {
-        "href": "posts",
-        "label": "Blog"
-      }
-    ]
+    }
   },
   "footer": {
     "color": "default",
     "social": {
-      "twitter": "/"
+      "twitter": "https://x.com/Sitorex_",
+      "youtube": "https://www.youtube.com/@sitorex"
     }
   },
   "theme": {
