@@ -19,21 +19,32 @@ export const Content = ({ data }: { data: PageBlocksContent }) => {
         width="medium"
       >
         <TinaMarkdown content={data.body} />
-        {data.imageContent && data.imageContent.map(imageContent => 
-              {return imageContent.imageContentSrc && <div
-                data-tina-field={tinaField(imageContent, "imageContentSrc")}
-                className="flex flex-wrap gap-4"
-              >
-                <Image
-                  className="w-full h-auto max-w-full rounded-lg"
-                  style={{ objectFit: "cover" }}
-                  alt={imageContent.imageContentAlt}
-                  src={imageContent.imageContentSrc}
-                  width={500}
-                  height={500}
-                />
-              </div>}
-            )}
+        {data.contentHtmlContent && (
+          <div
+            className="relative w-2/3 h-1/3"
+            dangerouslySetInnerHTML={{ __html: data.contentHtmlContent }}
+          ></div>
+        )}
+        {data.imageContent &&
+          data.imageContent.map((imageContent) => {
+            return (
+              imageContent.imageContentSrc && (
+                <div
+                  data-tina-field={tinaField(imageContent, "imageContentSrc")}
+                  className="flex flex-wrap gap-4"
+                >
+                  <Image
+                    className="w-full h-auto max-w-full rounded-lg"
+                    style={{ objectFit: "cover" }}
+                    alt={imageContent.imageContentAlt}
+                    src={imageContent.imageContentSrc}
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              )
+            );
+          })}
       </Container>
     </Section>
   );
@@ -53,6 +64,14 @@ export const contentBlockSchema: Template = {
       type: "rich-text",
       label: "Texte",
       name: "body",
+    },
+    {
+      type: "string",
+      label: "Contenu HTML",
+      name: "contentHtmlContent",
+      ui: {
+        component: "textarea",
+      },
     },
     {
       type: "object",

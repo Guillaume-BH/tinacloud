@@ -59,6 +59,14 @@ blocks:
     _template: features
   - body: |
       ## Mes créations
+    contentHtmlContent: >-
+      <iframe
+      src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a7ec9626-be8c-11ee-9ddd-3f41531135b6"
+      title="Contenu intégré du projet" class="embed-content" frameborder="0"
+      allowfullscreen="" sandbox="allow-same-origin allow-scripts
+      allow-pointer-lock allow-forms" loading="lazy" fetchpriority="auto"
+      style="height: 100%; left: 0px; position: absolute; top: 0px; width:
+      100%;"></iframe>
     imageContent:
       - imageContentSrc: /uploads/f6f147112454793.62df9937582b6.png
       - imageContentSrc: /uploads/379e2e112454793.6360c40e9566b.png
