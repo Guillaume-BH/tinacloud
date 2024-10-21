@@ -1,5 +1,4 @@
 import React from "react";
-import { wrapFieldsWithMeta } from "tinacms";
 
 export const colorOptions = [
   "blue",
@@ -13,7 +12,7 @@ export const colorOptions = [
   "white",
 ];
 
-export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
+export const ColorPickerInput = ({ input }: { input: { name: string; value: string[]; onChange: (value: string[]) => void; } }) => {
   const inputClasses = {
     blue: "bg-blue-500 border-blue-600",
     teal: "bg-teal-500 border-teal-600",
@@ -28,7 +27,7 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
 
   return (
     <>
-      <input type="text" id={input.name} className="hidden" {...input} />
+      <input type="text" id={input.name} className="hidden" value={input.value.join(',')} readOnly />
       <div className="flex gap-2 flex-wrap">
         {colorOptions.map((color) => {
           return (
@@ -37,12 +36,15 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
               className={`w-9 h-9 rounded-full shadow border ${
                 inputClasses[color]
               } ${
-                input.value === color
+                input.value.includes(color)
                   ? "ring-[3px] ring-offset-2 ring-blue-400"
                   : ""
               }`}
               onClick={() => {
-                input.onChange(color);
+                const newValue = input.value.includes(color)
+                  ? input.value.filter((c) => c !== color)
+                  : [...input.value, color];
+                input.onChange(newValue);
               }}
             ></button>
           );
@@ -50,4 +52,4 @@ export const ColorPickerInput = wrapFieldsWithMeta(({ input }) => {
       </div>
     </>
   );
-});
+};

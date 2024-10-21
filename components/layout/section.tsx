@@ -1,8 +1,6 @@
 import React from "react";
-import { useLayout } from "../layout/layout-context";
 
 export const Section = ({ children, hasBgColor = false, className = "" }) => {
-  const { theme } = useLayout();
   const sectionhasBgColorCss = hasBgColor ? "text-white bg-pink-600 bg-gradient-to-br from-pink-600 to-pink-700" : "";
 
   return (

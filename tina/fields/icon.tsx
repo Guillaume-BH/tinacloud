@@ -157,6 +157,7 @@ export const iconSchema = {
       type: "string",
       label: "Color",
       name: "color",
+      list: true,
       ui: {
         component: ColorPickerInput,
       },

@@ -4,10 +4,8 @@ import * as React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { PageBlocksHeroActions } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { useLayout } from "../layout/layout-context";
 
 export const Actions = ({
-  parentColor = "default",
   className = "",
   actions,
 }: {
@@ -15,7 +13,6 @@ export const Actions = ({
   className: string;
   actions: PageBlocksHeroActions[];
 }) => {
-  const { theme } = useLayout();
   return (
     <div className={`flex flex-wrap items-center gap-y-4 gap-x-6 ${className}`}>
       {actions &&
