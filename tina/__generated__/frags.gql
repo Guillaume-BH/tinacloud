@@ -1,0 +1,115 @@
+fragment PageParts on Page {
+  __typename
+  title
+  blocks {
+    __typename
+    ... on PageBlocksHero {
+      headline
+      text
+      actions {
+        __typename
+        label
+        type
+        icon
+        link
+      }
+      image {
+        __typename
+        src
+        alt
+      }
+      color
+    }
+    ... on PageBlocksFeatures {
+      items {
+        __typename
+        icon {
+          __typename
+          name
+          color
+          style
+        }
+        title
+        text
+      }
+    }
+    ... on PageBlocksContent {
+      body
+      contentHtmlContent
+      imageContent {
+        __typename
+        imageContentSrc
+        imageContentAlt
+      }
+    }
+    ... on PageBlocksTestimonial {
+      quote
+      author
+    }
+  }
+}
+
+fragment PostParts on Post {
+  __typename
+  title
+  heroImg
+  excerpt
+  author {
+    ... on Author {
+      __typename
+      name
+      avatar
+    }
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+  }
+  date
+  _body
+}
+
+fragment AuthorParts on Author {
+  __typename
+  name
+  avatar
+}
+
+fragment GlobalParts on Global {
+  __typename
+  header {
+    __typename
+    imageHeaderObject {
+      __typename
+      imageHeaderObjectSrc
+      imageHeaderObjecttAlt
+    }
+    nav {
+      __typename
+      href
+      label
+    }
+  }
+  footer {
+    __typename
+    color
+    social {
+      __typename
+      twitter
+      youtube
+    }
+  }
+  theme {
+    __typename
+    color
+    font
+    darkMode
+  }
+}
