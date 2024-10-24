@@ -23,7 +23,7 @@ blocks:
     image:
       src: /uploads/76d92a112454793.62ddf761882a8.png
       alt: ''
-    color: default
+    color: ''
     _template: hero
   - items:
       - icon:
