@@ -1,8 +1,7 @@
 ---
 title: About
 blocks:
-  - body: |
-      ![](/uploads/0e8293112454793.6360c40e94a9b.png)
+  - body: ''
     imageContent:
       - imageContentSrc: ''
     _template: content
